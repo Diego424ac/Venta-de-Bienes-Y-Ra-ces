@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Venta de Casas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="login-container">
+        <h1>Bienvenido al Juego de Venta de Casas</h1>
+        <div id="auth-container">
+            <!-- Formulario de Registro -->
+            <div id="register-container" class="auth-form">
+                <h2>Registrarse</h2>
+                <label for="username">Nombre de Usuario:</label>
+                <input type="text" id="register-username" placeholder="Usuario" required>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="register-password" placeholder="Contraseña" required>
+                <button onclick="register()">Registrar</button>
+            </div>
+
+            <!-- Formulario de Iniciar Sesión -->
+            <div id="login-form-container" class="auth-form hidden">
+                <h2>Iniciar Sesión</h2>
+                <label for="login-username">Nombre de Usuario:</label>
+                <input type="text" id="login-username" placeholder="Usuario" required>
+                <label for="login-password">Contraseña:</label>
+                <input type="password" id="login-password" placeholder="Contraseña" required>
+                <button onclick="login()">Iniciar Sesión</button>
+            </div>
+
+            <!-- Formulario de Compra de Tokens -->
+            <div id="buy-tokens-container" class="auth-form hidden">
+                <h2>Compra de Tokens</h2>
+                <input type="number" id="tokens-to-buy" placeholder="Cantidad de tokens">
+                <button onclick="buyTokens()">Comprar Tokens</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor de Juego -->
+    <div id="game-container" class="hidden">
+        <h1>Venta de Casas</h1>
+        <div id="level-info">
+            <h3>Nivel: <span id="level">1</span></h3>
+            <h3>Tokens Disponibles: <span id="player-tokens">100</span></h3>
+        </div>
+
+        <div id="house-list">
+            <!-- Las casas se generarán aquí con JavaScript -->
+        </div>
+
+        <div id="player-houses">
+            <h3>Casas Compradas</h3>
+            <ul id="house-ownership-list">
+                <!-- Aquí se listarán las casas compradas -->
+            </ul>
+        </div>
+
+        <div id="result-message"></div>
+
+        <!-- Botón de recarga de 500 tokens -->
+        <div id="reload-500-tokens" class="hidden">
+            <button onclick="reload500Tokens()">Recargar 500 Tokens</button>
+        </div>
+    </div>
+
+    <!-- Contenedor de Final del Juego -->
+    <div id="game-end-container" class="hidden">
+        <h2>¡Felicidades, completaste el juego!</h2>
+        <p>Para obtener más tokens y continuar comprando casas, contáctanos.</p>
+        <button onclick="redirectToForm()">Contacta a los Desarrolladores</button>
+        <button onclick="reloadTokens()">Recargar Tokens con Dinero Real</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
